@@ -67,7 +67,7 @@ public class ImageLoader {
         return new SingleConfig.ConfigBuilder(context);
     }
     /**
-     * 根据系统缓存密度清理缓存
+     * 根据系统内存状态动态调整内存使用策略
      */
     public static void trimMemory(int level){
         getActualLoader().trimMemory(level);

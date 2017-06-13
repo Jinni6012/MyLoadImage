@@ -162,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
                 .priority(PriorityMode.PRIORITY_NORMAL)//优先级
                 .placeHolder(R.mipmap.ic_launcher)
                 .scale(ScaleMode.FIT_CENTER)
-//                .ignoreCertificateVerify()
                 .into(iv_test9);
 
         ImageLoader.with(this)
@@ -179,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
 //                .into(iv_test10);
 
         ImageLoader.with(this)
-                .file("file://" + Environment.getExternalStorageDirectory().getPath() + File.pathSeparator + IMG_NAME)
+                .file("file://" + Environment.getExternalStorageDirectory().getPath() + File.separatorChar + IMG_NAME)
                 .placeHolder(R.mipmap.ic_launcher)
                 .scale(ScaleMode.FIT_CENTER)
                 .into(iv_test11);
@@ -219,9 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onSuccess(Bitmap bitmap) {
                         Log.e(TAG, "下载图片成功 bitmap");
                         iv_test16.setImageBitmap(bitmap);
-
                     }
-
                     @Override
                     public void onFail() {
 
@@ -230,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * 分线程
          */
-        ImageLoader.saveBitmapIntoGallery(new DownLoadImageService(MainActivity.this, URL3, true, "lala", new ImageDownLoadCallBack() {
+        ImageLoader.saveBitmapIntoGallery(new DownLoadImageService(MainActivity.this, URL3,"lala", new ImageDownLoadCallBack() {
 
             @Override
             public void onDownLoadSuccess(Bitmap bitmap) {

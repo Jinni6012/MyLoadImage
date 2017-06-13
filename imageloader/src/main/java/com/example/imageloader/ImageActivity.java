@@ -85,7 +85,6 @@ public class ImageActivity extends AppCompatActivity {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
             }
-
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 switch (newState){

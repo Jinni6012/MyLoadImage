@@ -23,16 +23,14 @@ import java.util.concurrent.ExecutionException;
 public class DownLoadImageService implements Runnable {
     private Context context;
     private String url;
-    private boolean isSetMediaStore;
     private String fileName;
     private ImageDownLoadCallBack callback;
     private File currentFile;
 
 
-    public DownLoadImageService(Context context, String url, boolean isSetMediaStore, String fileName, ImageDownLoadCallBack callback) {
+    public DownLoadImageService(Context context, String url, String fileName, ImageDownLoadCallBack callback) {
         this.context = context;
         this.url = url;
-        this.isSetMediaStore = isSetMediaStore;
         this.fileName = fileName;
         this.callback = callback;
     }
